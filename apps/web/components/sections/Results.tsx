@@ -163,37 +163,8 @@ const saveResult = () => {
 export default Results
 
 
- const Row = ({id, score, grade, name, regNumber}: any) => {
-  const context = useContextHook();
-  const details = context?.state?.course_details;
-  
-  // const [grade, setGrade] = useState<string>('');
-  // const [err, setErr] = useState<string>('');
-  // const [click, setClick] = useState<boolean>(false)
-  // const handleChange = (e:any) => {
-  //   const result = e.target.value;
-  //   setGrade(e.target.value);
-  //   if(parseInt(result) > 100) {
-  //     setErr('beyond percentage')
-  //   }else {
-  //     setErr('')
-  //   }
-  // }
-  const Add = () => {
-    // if(!grade || parseInt(grade) <= 0) return toast.error('Enter grade field')
-    const result = 
-    {
-      level: details?.year,
-      semester: details?.semester,
-      courseTitle: details?.courseTitle,
-      courseCode: details?.courseCode,
-      creditLoad: details?.creditLoad,
-      total: score,
-      grade: grade
-    }
-    context?.addResult(result);
-    console.log(context?.state?.result)
-  }
+ const Row = ({id, score, grade, name, regNumber}: any) => {  
+ 
   return (
     <tr className="border-b shadow-sm" key={id}>
     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 border-r">{id}</td>
@@ -203,19 +174,13 @@ export default Results
       {regNumber}
       </td>
     <td className="text-sm text-gray-900 font-light relative py-4 whitespace-nowrap border-r">
-        {/* <p className='text-[12px] absolute top-0 right-2 text-red-500'>{err && err}</p>
-      <input type="text" value={grade} placeholder='Enter score (%)' className='border-b focus:outline-none' onChange={handleChange} /> */}
+ 
       {score}
     </td>
     <td className="text-sm text-gray-900 font-light  py-4 whitespace-nowrap border-r">
-      {/* {GradeSwitch(grade)} */}
       {grade}
     </td>
-    {/* <td className="text-sm items-center justify-center text-gray-900 flex font-light px-6 py-4 whitespace-nowrap"> */}
-    
-    {/* <i className={`${click ? "ri-check-line" : "ri-add-line"} text-[24px] ${click ? "text-green-400" : "text-primary"}  mr-3 hover:font-bold cursor-pointer`} onClick={Add}></i> */}
-
-    {/* </td> */}
+ 
   </tr>    
   )
 }
