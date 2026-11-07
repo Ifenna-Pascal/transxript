@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Montserrat&family=Open+Sans:wght@500&family=PT+Serif&family=Poppins&display=swap');
+
+@layer components  {
+    .home-link {
+        @apply text-primary font-semibold leading-[54px] font-PT
+    }   
+    .nav-link {
+        @apply text-gray-700 font-popins md:block hidden leading-[27px] text-[16px] px-6 hover:text-primary hover:font-semibold
+    }
+    .login {
+        @apply text-white text-[14px] lg:text-[15px] leading-[20px] md:leading-[27px] px-8 md:px-14 tracking-wider py-2 flex items-center justify-center bg-primary
+    }
+    .heroBg {
+        background: linear-gradient(to right, rgba(14, 51, 134, 0.9), rgba(0,0,0,0.5)), url("/assets/hero2.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        /* background-position: center; */
+    }
+    
+    .list {
+      @apply py-5 cursor-pointer hover:font-bold flex items-center text-gray-300 font-popins text-[16px]
+    }
+
+    .action {
+        background: linear-gradient(to right, rgba(0, 0,0, 0.7), rgba(14, 51, 134,0.8)), url("/assets/signin.jpg");
+    }
+
+    .container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.4);
+      }
+      .modal {
+        z-index: 1;
+        min-width: 500px;
+        min-height: 200px;
+        background: white;
+        display: flex;
+        position: relative;
+        animation: animate 0.3s;
+      }
+      @keyframes animate {
+        from {
+          transform: scale(0.5);
+        }
+        to {
+          transform: scale(1);
+        }
+      }
+ 
+}
